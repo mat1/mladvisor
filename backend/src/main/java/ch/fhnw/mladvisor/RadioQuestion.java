@@ -1,9 +1,11 @@
 package ch.fhnw.mladvisor;
 
 import java.util.List;
+import java.util.UUID;
 
 public class RadioQuestion implements Question {
 
+    private final String id = UUID.randomUUID().toString();
     private final String reference;
     private final Category category;
     private final String question;
@@ -14,6 +16,11 @@ public class RadioQuestion implements Question {
         this.category = category;
         this.question = question;
         this.answers = answers;
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 
     @Override

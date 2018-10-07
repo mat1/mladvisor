@@ -1,7 +1,10 @@
 package ch.fhnw.mladvisor;
 
+import java.util.UUID;
+
 public class Criterion implements Question {
 
+    private final String id = UUID.randomUUID().toString();
     private final String reference;
     private final Category category;
     private final SubCategory subCategory;
@@ -16,6 +19,10 @@ public class Criterion implements Question {
         this.name = name;
         this.weight = weight;
         this.question = question;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getReference() {

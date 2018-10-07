@@ -1,7 +1,10 @@
 package ch.fhnw.mladvisor;
 
+import java.util.UUID;
+
 public class TextQuestion implements Question {
 
+    private final String id = UUID.randomUUID().toString();
     private final String reference;
     private final Category category;
     private final String question;
@@ -10,6 +13,10 @@ public class TextQuestion implements Question {
         this.reference = reference;
         this.category = category;
         this.question = question;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getReference() {
