@@ -3,6 +3,9 @@ package ch.fhnw.mladvisor;
 import java.util.List;
 import java.util.UUID;
 
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.toList;
+
 public class SurveyResult {
 
     private final String id = UUID.randomUUID().toString();
@@ -23,6 +26,8 @@ public class SurveyResult {
     }
 
     public List<CategoryResult> getCategoryResults() {
-        return categoryResults;
+        return categoryResults.stream()
+                .sorted(comparing(CategoryResult::getCategory))
+                .collect(toList());
     }
 }

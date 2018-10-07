@@ -80,6 +80,7 @@ export default {
       Api.postResult(this.id, surveyResultRequest).then(result => {
         console.log("Result");
         console.log(result);
+        this.$router.push(`result/${result.id}`);
       });
     }
   }

@@ -38,7 +38,7 @@ public class SurveyController {
         return result;
     }
 
-    @GetMapping("surveys/{id}/results/{id}")
+    @GetMapping("results/{id}")
     public SurveyResult getSurveyResult(@PathVariable("id") String id) {
         return results.get(id);
     }
