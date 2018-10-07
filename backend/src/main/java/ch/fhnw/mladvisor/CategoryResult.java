@@ -5,7 +5,6 @@ import java.util.List;
 public class CategoryResult {
     private final Category category;
     private final List<CriterionResult> criterionResults;
-    private final List
 
     public CategoryResult(Category category, List<CriterionResult> criterionResults) {
         this.category = category;
