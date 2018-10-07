@@ -3,8 +3,15 @@ class Criterion {
     this.id = id;
     this.category = category;
     this.question = question;
+    this.answers = [
+      { text: "Strongly agree", value: 4 },
+      { text: "Agree", value: 3 },
+      { text: "Neutral", value: 2 },
+      { text: "Disagree", value: 1 },
+      { text: "Strongly disagree", value: 0 }
+    ];
     this.answer = null;
-    this.important = null;
+    this.unimportant = false;
   }
 }
 
