@@ -2,8 +2,7 @@
   <div>
     <div class="row">
       <div class="col s12">
-        <h4>ML Advisor</h4>
-        <a class="waves-effect waves-light btn-large" href="#/survey">Start</a>
+        <h4>Survey</h4>
       </div>
     </div>
   </div>
@@ -11,6 +10,6 @@
 
 <script>
 export default {
-  name: "home"
+  name: "survey"
 };
 </script>
