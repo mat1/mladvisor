@@ -1,6 +1,6 @@
 package ch.fhnw.mladvisor;
 
-public class Criterion {
+public class Criterion implements Question {
 
     private final String reference;
     private final Category category;
