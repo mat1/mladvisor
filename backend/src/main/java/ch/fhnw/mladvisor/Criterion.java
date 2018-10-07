@@ -11,6 +11,7 @@ public class Criterion implements Question {
     private final String name;
     private final int weight;
     private final String question;
+    private int answer;
 
     public Criterion(String reference, Category category, SubCategory subCategory, String name, int weight, String question) {
         this.reference = reference;
@@ -47,5 +48,10 @@ public class Criterion implements Question {
 
     public String getQuestion() {
         return question;
+    }
+
+    @Override
+    public void setAnswer(String answer) {
+        this.answer = Integer.parseInt(answer);
     }
 }

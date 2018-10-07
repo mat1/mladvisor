@@ -18,7 +18,7 @@
       </div>
       <div class="row">
         <div class="col s12">
-          <a class="waves-effect waves-light btn-large" @click="send">Show Result</a>
+          <a class="waves-effect waves-light btn-large" @click="send">Show Results</a>
         </div>
       </div>
     </div>

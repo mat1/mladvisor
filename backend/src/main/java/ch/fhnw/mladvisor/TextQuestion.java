@@ -8,6 +8,7 @@ public class TextQuestion implements Question {
     private final String reference;
     private final Category category;
     private final String question;
+    private String answer;
 
     public TextQuestion(String reference, Category category, String question) {
         this.reference = reference;
@@ -30,5 +31,10 @@ public class TextQuestion implements Question {
     @Override
     public String getQuestion() {
         return question;
+    }
+
+    @Override
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }

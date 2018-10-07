@@ -10,6 +10,7 @@ public class RadioQuestion implements Question {
     private final Category category;
     private final String question;
     private final List<String> answers;
+    private String answer;
 
     public RadioQuestion(String reference, Category category, String question, List<String> answers) {
         this.reference = reference;
@@ -38,5 +39,10 @@ public class RadioQuestion implements Question {
 
     public static RadioQuestion yesNoUnkown(Category category, String question) {
         return new RadioQuestion("F1", category, question, List.of("Yes", "No", "Unknown"));
+    }
+
+    @Override
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }

@@ -1,14 +1,20 @@
 package ch.fhnw.mladvisor;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
+import java.util.UUID;
 
 import static ch.fhnw.mladvisor.Category.*;
 import static ch.fhnw.mladvisor.SubCategory.*;
+import static java.util.stream.Collectors.toList;
 
 public class Survey {
 
-    List<Question> questions = List.of(
-            new TextQuestion("F1", INPUT, "Please describe the problem, the customer wants to solve in a few sentence."),
+    private final String id = UUID.randomUUID().toString();
+
+    private final List<Question> questions = List.of(
+            new TextQuestion("F1", GENERAL, "Please describe the problem, the customer wants to solve in a few sentence."),
             new Criterion("F1", INPUT, DATA_QUANTITY, "Available labeled data", 1, "It is enough labeled data available."),
             new Criterion("F1", INPUT, DATA_QUANTITY, "Cost for collecting data compared with benefit", 1, "Cost for collecting data compared with benefit is low."),
             new Criterion("F1", INPUT, DATA_QUANTITY, "Cost for labeling data compared with benefit", 1, "Cost for labeling data compared with benefit is low."),
@@ -49,5 +55,25 @@ public class Survey {
 
     public List<Question> getQuestions() {
         return questions;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    @JsonIgnore
+    public List<Criterion> getCriteria() {
+        return questions.stream()
+                .filter(q -> q instanceof Criterion)
+                .map(Criterion.class::cast)
+                .collect(toList());
+    }
+
+    public void updateAnswer(Answer answer) {
+        getQuestionById(answer.getId()).setAnswer(answer.getAnswer());
+    }
+
+    private Question getQuestionById(String id) {
+        return questions.stream().filter(question -> question.getId().equals(id)).findFirst().get();
     }
 }
