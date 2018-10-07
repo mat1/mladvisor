@@ -42,7 +42,7 @@ public class Criterion implements Question {
         return name;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
@@ -52,6 +52,13 @@ public class Criterion implements Question {
 
     @Override
     public void setAnswer(String answer) {
+        if (answer == null) {
+            return;
+        }
         this.answer = Integer.parseInt(answer);
+    }
+
+    public int getPoints() {
+        return answer;
     }
 }

@@ -13,7 +13,7 @@ public class Survey {
 
     private final String id = UUID.randomUUID().toString();
 
-    private final List<Question> questions = List.of(
+    private List<Question> questions = List.of(
             new TextQuestion("F1", GENERAL, "Please describe the problem, the customer wants to solve in a few sentence."),
             new Criterion("F1", INPUT, DATA_QUANTITY, "Available labeled data", 1, "It is enough labeled data available."),
             new Criterion("F1", INPUT, DATA_QUANTITY, "Cost for collecting data compared with benefit", 1, "Cost for collecting data compared with benefit is low."),
@@ -51,6 +51,10 @@ public class Survey {
             );
 
     public Survey() {
+    }
+
+    Survey(List<Question> questions) {
+        this.questions = questions;
     }
 
     public List<Question> getQuestions() {

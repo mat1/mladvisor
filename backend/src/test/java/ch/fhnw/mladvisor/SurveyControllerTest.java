@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class SurveyControllerTest {
 
     @Test
@@ -16,8 +18,6 @@ public class SurveyControllerTest {
 
         SurveyResult surveyResult = surveyController.postSurvey(survey.getId(), new SurveyResultRequest(List.of(new Answer(criterion.getId(), "1"))));
 
-
-
-
+        assertThat(surveyResult.getCategoryResults()).hasSize(4);
     }
 }

@@ -44,12 +44,14 @@ export default {
   data: () => {
     return {
       loading: true,
-      questions: []
+      questions: [],
+      id: null
     };
   },
   created() {
     Api.startSurvey().then(survey => {
       this.questions = Survey.toQuestions(survey.questions);
+      this.id = survey.id;
       this.loading = false;
       console.log(this.questions);
     });
@@ -65,7 +67,20 @@ export default {
       return question instanceof Survey.RadioQuestion;
     },
     send() {
-      console.log(this.questions);
+      const surveyResultRequest = {
+        answers: this.questions.map(q => {
+          return {
+            id: q.id,
+            answer: q.answer
+          };
+        })
+      };
+
+      console.log(surveyResultRequest);
+      Api.postResult(this.id, surveyResultRequest).then(result => {
+        console.log("Result");
+        console.log(result);
+      });
     }
   }
 };
