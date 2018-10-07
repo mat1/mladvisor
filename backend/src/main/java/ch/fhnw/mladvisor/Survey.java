@@ -14,7 +14,7 @@ public class Survey {
     private final String id = UUID.randomUUID().toString();
 
     private List<Question> questions = List.of(
-            new TextQuestion("F1", GENERAL, "Please describe the problem, the customer wants to solve in a few sentence."),
+            new TextQuestion("F1", GENERAL, "Please describe the problem, the customer wants to solve in a few sentences."),
             new Criterion("F1", INPUT, DATA_QUANTITY, "Available labeled data", 1, "It is enough labeled data available."),
             new Criterion("F1", INPUT, DATA_QUANTITY, "Cost for collecting data compared with benefit", 1, "Cost for collecting data compared with benefit is low."),
             new Criterion("F1", INPUT, DATA_QUANTITY, "Cost for labeling data compared with benefit", 1, "Cost for labeling data compared with benefit is low."),
@@ -40,7 +40,6 @@ public class Survey {
             new Criterion("F1", ACTUAL, null, "Availability of domain knowledge", 1, "Domain knowledge to support the project is available."),
             new Criterion("F1", ACTUAL, null, "Open to work with new technologies", 1, "Employees are open to work with new technologies."),
             new Criterion("F1", ACTUAL, null, "Regulations which forbids or makes it difficult to use machine learning", 1, "There are regulations which forbids or makes it difficult to use machine learning."),
-            new Criterion("F1", ACTUAL, null, "Experience with machine learning", 1, "The company has experience with machine learning."),
             new TextQuestion("F1", ACTUAL, "What is the purpose of the model output?"),
             new TextQuestion("F1", ACTUAL, "How should the model be integrated in the current process? Which decisions will be made subsequently with the output?"),
             new TextQuestion("F1", ACTUAL, "Which platform should be used? e.g. Cloud Platforms like Amazon, Google or Internal Platforms"),
