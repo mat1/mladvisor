@@ -43,4 +43,11 @@ public class Survey {
             new Criterion("F1", TARGET, null, "Clear success factors", 1, "There are clear success factors for the project."),
             new Criterion("F1", TARGET, null, "Return on investment", 1, "The return on investment is high.")
             );
+
+    public Survey() {
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
 }
