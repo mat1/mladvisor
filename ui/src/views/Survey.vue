@@ -9,7 +9,12 @@
 </template>
 
 <script>
+import Api from "@/api";
+
 export default {
-  name: "survey"
+  name: "survey",
+  created() {
+    Api.startSurvey();
+  }
 };
 </script>
