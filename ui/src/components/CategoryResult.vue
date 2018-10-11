@@ -15,7 +15,7 @@
         <tbody>
           <tr v-for="(criterionR, index) in result.criterionResults" :key="index">
             <td>{{criterionR.criterion.name}}</td>
-            <td>{{criterionR.criterion.weight}}</td>
+            <td>{{formatWeight(criterionR.criterion.weight, result.criterionResults)}}</td>
             <td>{{criterionR.criterion.points}}</td>
             <td>{{formatNumber(criterionR.weightedPoints)}}</td>
           </tr>
@@ -38,6 +38,11 @@ export default {
         return 0;
       }
       return num.toFixed(2);
+    },
+    formatWeight(weight, criterionResults) {
+      const result = weight / criterionResults.length;
+      console.log(result);
+      return Math.round(result * 100) + "%";
     }
   },
   mounted() {}
