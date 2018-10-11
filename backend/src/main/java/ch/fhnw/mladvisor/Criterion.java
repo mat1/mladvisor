@@ -61,4 +61,8 @@ public class Criterion implements Question {
     public int getPoints() {
         return answer;
     }
+
+    public String toCsvString() {
+        return category + ";" + subCategory + ";" + name;
+    }
 }
