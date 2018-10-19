@@ -4,9 +4,7 @@
       <p>Strongly agree</p>
     </div>
     <div class="col s6" :class="{'unknown': unknown}">
-      <p class="range-field">
-        <input type="range" id="test5" min="0" max="4" step="1" v-model="question.answer" :disabled="unknown" />
-      </p>
+      <input type="range" id="test5" min="0" max="4" step="1" v-model="question.answer" :disabled="unknown" />
     </div>
     <div class="col s2" :class="{'unknown': unknown}">
       <p class="right-align">
@@ -63,5 +61,14 @@ export default {
 }
 input[type="range"] {
   direction: rtl;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 22px;
+  padding-top: 24px;
+  border-width: 0px;
+}
+.critera-label {
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 </style>
