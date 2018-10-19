@@ -23,11 +23,11 @@
             <td>{{criterionR.criterion.answer}}</td>
             <td>{{criterionR.weightedPoints | formatPoints}}</td>
           </tr>
-          <tr>
-            <td><strong>Total</strong></td>
+          <tr class="table-summary">
+            <td>Total</td>
             <td></td>
             <td></td>
-            <td><strong>{{result.totalPoints | formatPoints}}</strong></td>
+            <td>{{result.totalPoints | formatPoints}}</td>
           </tr>
         </tbody>
       </table>
@@ -85,5 +85,8 @@ export default {
 <style lang="scss" scoped>
 tbody > tr:last-child {
   border-bottom: none;
+}
+.table-summary {
+  font-weight: bold;
 }
 </style>
