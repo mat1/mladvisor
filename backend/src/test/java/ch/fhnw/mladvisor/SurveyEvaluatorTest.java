@@ -18,7 +18,7 @@ public class SurveyEvaluatorTest {
                 createCriterion(INPUT, "Clean data", 1)
         );
 
-        var survey = new Survey(questions);
+        var survey = new Survey("id", questions);
 
         survey.getQuestions().forEach(q -> q.setAnswer("1"));
 
@@ -37,7 +37,7 @@ public class SurveyEvaluatorTest {
                 createCriterion(INPUT, "Clean data", 1)
         );
 
-        var survey = new Survey(questions);
+        var survey = new Survey("id", questions);
 
         survey.getQuestions().forEach(q -> q.setAnswer("4"));
 

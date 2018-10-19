@@ -12,35 +12,39 @@ public class SurveyController {
     private final Map<String, Survey> surveys = new ConcurrentHashMap<>();
     private final Map<String, SurveyResult> results = new ConcurrentHashMap<>();
 
+    private final SurveyStore surveyStore;
+
+    public SurveyController(SurveyStore surveyStore) {
+        this.surveyStore = surveyStore;
+    }
+
     @PostMapping("surveys")
     public Survey createSurvey() {
         Survey survey = new Survey();
-        surveys.put(survey.getId(), survey);
+        surveyStore.saveSurvey(survey);
         return survey;
     }
 
     @GetMapping("surveys/{id}")
     public Survey getSurvey(@PathVariable("id") String id) {
-        return getSurveyById(id);
-    }
-
-    private Survey getSurveyById(@PathVariable("id") String id) {
-        return surveys.get(id);
+        return surveyStore.getSurveyById(id);
     }
 
     @PostMapping("surveys/{id}/results")
     public SurveyResult postSurvey(@PathVariable("id") String id, @RequestBody SurveyResultRequest surveyResultRequest) {
-        Survey survey = getSurveyById(id);
-        surveyResultRequest.getAnswers().forEach(survey::updateAnswer);
-        SurveyResult result = SurveyEvaluator.getResult(survey);
-        results.put(result.getId(), result);
+        Survey survey = surveyStore.getSurveyById(id);
 
-        return result;
+        surveyResultRequest.getAnswers().forEach(survey::updateAnswer);
+        surveyStore.updateSurvey(survey);
+
+        return SurveyEvaluator.getResult(survey);
     }
 
-    @GetMapping("results/{id}")
+    @GetMapping("surveys/{id}/results")
     public SurveyResult getSurveyResult(@PathVariable("id") String id) {
-        return results.get(id);
+        Survey survey = surveyStore.getSurveyById(id);
+
+        return SurveyEvaluator.getResult(survey);
     }
 
 }

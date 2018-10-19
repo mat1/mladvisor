@@ -20,12 +20,12 @@ export default new Router({
       component: About
     },
     {
-      path: "/survey",
+      path: "/survey/:id",
       name: "survey",
       component: Survey
     },
     {
-      path: "/result/:id",
+      path: "/survey/:id/results",
       name: "result",
       component: Result
     }

@@ -1,6 +1,8 @@
 package ch.fhnw.mladvisor;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 import java.util.UUID;
@@ -11,7 +13,7 @@ import static java.util.stream.Collectors.toList;
 
 public class Survey {
 
-    private final String id = UUID.randomUUID().toString();
+    private final String id;
 
     private List<Question> questions = List.of(
             new TextQuestion("F1", GENERAL,
@@ -87,9 +89,13 @@ public class Survey {
             );
 
     public Survey() {
+        this.id = UUID.randomUUID().toString();
     }
 
-    Survey(List<Question> questions) {
+    @JsonCreator
+    public Survey(@JsonProperty("id") String id,
+                  @JsonProperty("questions") List<Question> questions) {
+        this.id = id;
         this.questions = questions;
     }
 

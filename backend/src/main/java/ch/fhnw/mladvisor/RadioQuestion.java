@@ -1,11 +1,14 @@
 package ch.fhnw.mladvisor;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 import java.util.UUID;
 
 public class RadioQuestion implements Question {
 
-    private final String id = UUID.randomUUID().toString();
+    private final String id;
     private final String reference;
     private final Category category;
     private final String question;
@@ -13,10 +16,22 @@ public class RadioQuestion implements Question {
     private String answer;
 
     public RadioQuestion(String reference, Category category, String question, List<String> answers) {
+        this(UUID.randomUUID().toString(), reference, category, question, answers, null);
+    }
+
+    @JsonCreator
+    public RadioQuestion(@JsonProperty("id") String id,
+                         @JsonProperty("reference") String reference,
+                         @JsonProperty("category") Category category,
+                         @JsonProperty("question") String question,
+                         @JsonProperty("answers") List<String> answers,
+                         @JsonProperty("answer") String answer) {
+        this.id = id;
         this.reference = reference;
         this.category = category;
         this.question = question;
         this.answers = answers;
+        this.answer = answer;
     }
 
     @Override

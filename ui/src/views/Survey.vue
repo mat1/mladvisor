@@ -55,7 +55,7 @@ export default {
     };
   },
   created() {
-    Api.startSurvey().then(survey => {
+    Api.getSurvey(this.$route.params.id).then(survey => {
       this.questions = Survey.toQuestions(survey.questions);
       this.id = survey.id;
       this.loading = false;
@@ -84,9 +84,8 @@ export default {
 
       console.log(surveyResultRequest);
       Api.postResult(this.id, surveyResultRequest).then(result => {
-        console.log("Result");
         console.log(result);
-        this.$router.push(`result/${result.id}`);
+        this.$router.push({ name: "result" });
       });
     },
     firstQuestionFromCategory(question) {
