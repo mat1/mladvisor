@@ -31,7 +31,7 @@ public class CategoryResult {
         return criterionResults.stream().mapToDouble(CriterionResult::getWeightedPoints).sum();
     }
 
-    public double getMaximumPoints() {
+    public int getMaximumPoints() {
         return 4;
     }
 }

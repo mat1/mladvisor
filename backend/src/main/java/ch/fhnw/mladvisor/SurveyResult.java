@@ -30,4 +30,12 @@ public class SurveyResult {
                 .sorted(comparing(CategoryResult::getCategory))
                 .collect(toList());
     }
+
+    public double getTotalPoints() {
+        return categoryResults.stream().mapToDouble(CategoryResult::getTotalPoints).sum();
+    }
+
+    public int getMaximumPoints() {
+        return categoryResults.stream().mapToInt(CategoryResult::getMaximumPoints).sum();
+    }
 }

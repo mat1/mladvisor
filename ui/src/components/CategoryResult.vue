@@ -5,7 +5,7 @@
     </div>
     <div class="divider"></div>
     <div class="card-content" style="padding-top:8px;padding-bottom:8px;">
-      <h5 @click="showPoints = !showPoints" style="cursor: pointer;">Points <span class="right">{{formatNumber(result.totalPoints)}} / 4</span></h5>
+      <h5 @click="showPoints = !showPoints" style="cursor: pointer;">Points <span class="right">{{result.totalPoints | formatPoints}} / 4</span></h5>
       <table v-if="showPoints" class="highlight">
         <thead>
           <tr>
@@ -21,13 +21,13 @@
             <td>{{criterionR.criterion.name}}</td>
             <td>{{formatWeight(criterionR.criterion.weight, result.criterionResults)}}</td>
             <td>{{criterionR.criterion.answer}}</td>
-            <td>{{formatNumber(criterionR.weightedPoints)}}</td>
+            <td>{{criterionR.weightedPoints | formatPoints}}</td>
           </tr>
           <tr>
             <td><strong>Total</strong></td>
             <td></td>
             <td></td>
-            <td><strong>{{formatNumber(result.totalPoints)}}</strong></td>
+            <td><strong>{{result.totalPoints | formatPoints}}</strong></td>
           </tr>
         </tbody>
       </table>
@@ -64,12 +64,6 @@ export default {
     };
   },
   methods: {
-    formatNumber(num) {
-      if (num == 0) {
-        return 0;
-      }
-      return num.toFixed(1);
-    },
     color(points) {
       if (points < (MAX_POINTS * 1) / 3) {
         return "red lighten-2";
@@ -81,7 +75,6 @@ export default {
     },
     formatWeight(weight, criterionResults) {
       const result = weight / criterionResults.length;
-      console.log(result);
       return Math.round(result * 100) + "%";
     }
   },

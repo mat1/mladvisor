@@ -4,7 +4,8 @@
     <div v-else>
       <div class="row">
         <div class="col s12">
-          <h4>Results</h4>
+          <h4>Results <span class="right">{{results.totalPoints | formatPoints}} / {{results.maximumPoints}}</span></h4>
+          <p v-for="q in results.generalResults" :key="q.question" style="white-space: pre-wrap;" v-html="q.answer"></p>
         </div>
       </div>
       <div class="row flex">
@@ -30,17 +31,16 @@ export default {
   data: () => {
     return {
       loading: true,
-      results: [],
-      id: null
+      results: null
     };
   },
   created() {
-    this.id = this.$route.params.id;
+    const id = this.$route.params.id;
 
-    Api.getResults(this.id).then(results => {
+    Api.getResults(id).then(results => {
       this.results = results;
       this.loading = false;
-      console.log(this.results.categoryResults);
+      console.log(this.results);
     });
   },
   methods: {}
