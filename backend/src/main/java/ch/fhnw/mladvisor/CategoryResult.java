@@ -5,10 +5,14 @@ import java.util.List;
 public class CategoryResult {
     private final Category category;
     private final List<CriterionResult> criterionResults;
+    private final List<QuestionResult> questionResults;
 
-    public CategoryResult(Category category, List<CriterionResult> criterionResults) {
+    public CategoryResult(Category category,
+                          List<CriterionResult> criterionResults,
+                          List<QuestionResult> questionResults) {
         this.category = category;
         this.criterionResults = criterionResults;
+        this.questionResults = questionResults;
     }
 
     public Category getCategory() {
@@ -17,6 +21,10 @@ public class CategoryResult {
 
     public List<CriterionResult> getCriterionResults() {
         return criterionResults;
+    }
+
+    public List<QuestionResult> getQuestionResults() {
+        return questionResults;
     }
 
     public double getTotalPoints() {

@@ -45,4 +45,9 @@ public class RadioQuestion implements Question {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    @Override
+    public String getAnswer() {
+        return answer;
+    }
 }

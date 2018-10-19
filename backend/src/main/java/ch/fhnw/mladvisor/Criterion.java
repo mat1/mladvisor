@@ -58,7 +58,11 @@ public class Criterion implements Question {
         this.answer = Integer.parseInt(answer);
     }
 
-    public int getAnswer() {
+    public String getAnswer() {
+        return String.valueOf(answer);
+    }
+
+    public int getPoints() {
         return answer;
     }
 

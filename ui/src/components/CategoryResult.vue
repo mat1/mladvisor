@@ -5,14 +5,14 @@
     </div>
     <div class="divider"></div>
     <div class="card-content" style="padding-top:8px;padding-bottom:8px;">
-      <h5 @click="showPoints = !showPoints" style="cursor: pointer;">Points: {{formatNumber(result.totalPoints)}} / 4</h5>
-      <table v-if="showPoints">
+      <h5 @click="showPoints = !showPoints" style="cursor: pointer;">Points <span class="right">{{formatNumber(result.totalPoints)}} / 4</span></h5>
+      <table v-if="showPoints" class="highlight">
         <thead>
           <tr>
             <th>Criteria</th>
             <th>Weight</th>
             <th>Points</th>
-            <th>Eval. Points</th>
+            <th>Weighted Points</th>
           </tr>
         </thead>
 
@@ -23,12 +23,27 @@
             <td>{{criterionR.criterion.answer}}</td>
             <td>{{formatNumber(criterionR.weightedPoints)}}</td>
           </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td></td>
+            <td></td>
+            <td><strong>{{formatNumber(result.totalPoints)}}</strong></td>
+          </tr>
         </tbody>
       </table>
     </div>
     <div class="divider"></div>
     <div class="card-content" style="padding-top:4px;padding-bottom:8px;">
-      <h5>Answers</h5>
+      <h5 @click="showAnswers = !showAnswers" style="cursor: pointer;">Answers</h5>
+      <div v-if="showAnswers">
+        <p v-if="result.questionResults.length == 0">No questions answered</p>
+        <div v-for="q in result.questionResults" :key="q.question" style="margin-bottom:8px">
+          <p>{{q.question}}</p>
+          <p>
+            <strong>{{q.answer}}</strong>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -41,7 +56,8 @@ export default {
   },
   data: () => {
     return {
-      showPoints: false
+      showPoints: false,
+      showAnswers: false
     };
   },
   methods: {
@@ -60,3 +76,9 @@ export default {
   mounted() {}
 };
 </script>
+
+<style lang="scss" scoped>
+tbody > tr:last-child {
+  border-bottom: none;
+}
+</style>

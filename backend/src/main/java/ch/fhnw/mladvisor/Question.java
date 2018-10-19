@@ -6,5 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public interface Question {
     String getId();
     String getQuestion();
+    Category getCategory();
+    String getAnswer();
     void setAnswer(String answer);
 }

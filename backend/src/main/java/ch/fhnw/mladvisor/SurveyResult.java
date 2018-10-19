@@ -9,10 +9,10 @@ import static java.util.stream.Collectors.toList;
 public class SurveyResult {
 
     private final String id = UUID.randomUUID().toString();
-    private final List<String> generalResults;
+    private final List<QuestionResult> generalResults;
     private final List<CategoryResult> categoryResults;
 
-    public SurveyResult(List<String> generalResults, List<CategoryResult> categoryResults) {
+    public SurveyResult(List<QuestionResult> generalResults, List<CategoryResult> categoryResults) {
         this.generalResults = generalResults;
         this.categoryResults = categoryResults;
     }
@@ -21,7 +21,7 @@ public class SurveyResult {
         return id;
     }
 
-    public List<String> getGeneralResults() {
+    public List<QuestionResult> getGeneralResults() {
         return generalResults;
     }
 
