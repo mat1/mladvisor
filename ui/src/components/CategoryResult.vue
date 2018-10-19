@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-content" style="padding-bottom:8px;">
+    <div class="card-content" :class="color(result.totalPoints)" style="padding-bottom:8px;">
       <span class="card-title">{{result.category}}</span>
     </div>
     <div class="divider"></div>
@@ -49,6 +49,8 @@
 </template>
 
 <script>
+const MAX_POINTS = 4;
+
 export default {
   name: "CategoryResult",
   props: {
@@ -57,7 +59,8 @@ export default {
   data: () => {
     return {
       showPoints: false,
-      showAnswers: false
+      showAnswers: false,
+      maxPoints: 4
     };
   },
   methods: {
@@ -66,6 +69,15 @@ export default {
         return 0;
       }
       return num.toFixed(1);
+    },
+    color(points) {
+      if (points < (MAX_POINTS * 1) / 3) {
+        return "red lighten-2";
+      }
+      if (points < (MAX_POINTS * 2) / 3) {
+        return "orange lighten-2";
+      }
+      return "green lighten-2";
     },
     formatWeight(weight, criterionResults) {
       const result = weight / criterionResults.length;
