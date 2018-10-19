@@ -3,6 +3,12 @@
     <loading-widget v-if="loading"></loading-widget>
     <div v-else>
       <div class="row" v-for="question in questions" :key="question.id">
+        <div class="row" v-if="firstQuestionFromCategory(question) && question.category != 'GENERAL'">
+          <div class="col s12">
+            <h4>{{toCategoryName(question.category)}}</h4>
+            <div class="divider"></div>
+          </div>
+        </div>
         <div class="col s12">
           <h5>{{question.question}}</h5>
           <div v-if="isTextQuestion(question)">
@@ -82,6 +88,24 @@ export default {
         console.log(result);
         this.$router.push(`result/${result.id}`);
       });
+    },
+    firstQuestionFromCategory(question) {
+      let q = this.questions.find(q => q.category == question.category);
+      return q == question;
+    },
+    toCategoryName(cat) {
+      switch (cat) {
+        case "INPUT":
+          return "Input";
+        case "OUTPUT":
+          return "Output";
+        case "ACTUAL":
+          return "Actual Situation";
+        case "TARGET":
+          return "Target Situation";
+        default:
+          return "";
+      }
     }
   }
 };

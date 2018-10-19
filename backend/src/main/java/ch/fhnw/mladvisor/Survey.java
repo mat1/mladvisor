@@ -64,7 +64,7 @@ public class Survey {
             new Criterion("F1", OUTPUT, null, "Cost for error in prediction", 1, "Costs for errors in prediction are low."),
 
             new Criterion("F1", INPUT, DATA_QUANTITY,
-                    "Available labeled data", 1, "It is enough labeled data available."),
+                    "Available labeled data", 1, "Enough labeled data is available."),
             new Criterion("F1", INPUT, DATA_QUANTITY,
                     "Cost for collecting data compared with benefit", 1, "Cost for collecting data compared with benefit is low."),
             new Criterion("F1", INPUT, DATA_QUANTITY,
