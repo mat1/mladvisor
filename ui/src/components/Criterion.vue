@@ -14,7 +14,7 @@
     <div class="col s4 m2">
       <p class="center-align">
         <label>
-          <input type="checkbox" :value="unknown" @input="updateUnkown" />
+          <input type="checkbox" :value="unknown" @change="updateUnkown" />
           <span>Unknown</span>
         </label>
       </p>
