@@ -16,7 +16,7 @@
           <tr v-for="(criterionR, index) in result.criterionResults" :key="index">
             <td>{{criterionR.criterion.name}}</td>
             <td>{{formatWeight(criterionR.criterion.weight, result.criterionResults)}}</td>
-            <td>{{criterionR.criterion.points}}</td>
+            <td>{{criterionR.criterion.answer}}</td>
             <td>{{formatNumber(criterionR.weightedPoints)}}</td>
           </tr>
         </tbody>

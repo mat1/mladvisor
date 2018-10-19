@@ -1,5 +1,5 @@
 class Criterion {
-  constructor(id, category, question) {
+  constructor(id, category, question, answer) {
     this.id = id;
     this.category = category;
     this.question = question;
@@ -10,7 +10,7 @@ class Criterion {
       { text: "Disagree", value: 1 },
       { text: "Strongly disagree", value: 0 }
     ];
-    this.answer = null;
+    this.answer = answer;
     this.unimportant = false;
   }
 }
@@ -43,7 +43,7 @@ const toQuestions = questions => {
       return new RadioQuestion(q.id, q.category, q.question, q.answers);
     }
     if (q.type == "Criterion") {
-      return new Criterion(q.id, q.category, q.question);
+      return new Criterion(q.id, q.category, q.question, q.answer);
     }
   });
 };
