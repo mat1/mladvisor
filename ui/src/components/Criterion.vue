@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col s2" :class="{'unknown': unknown}">
-      <p>Strongly Agreee</p>
+      <p>Strongly agree</p>
     </div>
     <div class="col s6" :class="{'unknown': unknown}">
       <p class="range-field">
@@ -10,7 +10,7 @@
     </div>
     <div class="col s2" :class="{'unknown': unknown}">
       <p class="right-align">
-        Strongly Disagree
+        Strongly disagree
       </p>
     </div>
     <div class="col s4 m2">
