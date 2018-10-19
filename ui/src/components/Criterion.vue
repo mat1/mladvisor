@@ -64,6 +64,7 @@ input[type="range"] {
   margin-bottom: 0px;
   padding-bottom: 21px;
   padding-top: 23px;
+  -webkit-tap-highlight-color: transparent;
 }
 .critera-label {
   padding-bottom: 15px;
