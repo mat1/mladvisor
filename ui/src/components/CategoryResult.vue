@@ -1,8 +1,12 @@
 <template>
   <div class="card">
-    <div class="card-content">
+    <div class="card-content" style="padding-bottom:8px;">
       <span class="card-title">{{result.category}}</span>
-      <table>
+    </div>
+    <div class="divider"></div>
+    <div class="card-content" style="padding-top:8px;padding-bottom:8px;">
+      <h5 @click="showPoints = !showPoints" style="cursor: pointer;">Points: {{formatNumber(result.totalPoints)}} / 4</h5>
+      <table v-if="showPoints">
         <thead>
           <tr>
             <th>Criteria</th>
@@ -21,7 +25,10 @@
           </tr>
         </tbody>
       </table>
-      <h5>{{formatNumber(result.totalPoints)}} / 4 Points</h5>
+    </div>
+    <div class="divider"></div>
+    <div class="card-content" style="padding-top:4px;padding-bottom:8px;">
+      <h5>Answers</h5>
     </div>
   </div>
 </template>
@@ -32,12 +39,17 @@ export default {
   props: {
     result: Object
   },
+  data: () => {
+    return {
+      showPoints: false
+    };
+  },
   methods: {
     formatNumber(num) {
       if (num == 0) {
         return 0;
       }
-      return num.toFixed(2);
+      return num.toFixed(1);
     },
     formatWeight(weight, criterionResults) {
       const result = weight / criterionResults.length;
