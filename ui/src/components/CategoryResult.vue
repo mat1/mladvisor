@@ -1,10 +1,10 @@
 <template>
   <div class="card">
-    <div class="card-content" :class="color(result.totalPoints)" style="padding-bottom:8px;">
+    <div class="card-content" :class="color(result.totalPoints)" style="padding-bottom:12px;">
       <span class="card-title">{{result.category}}</span>
     </div>
     <div class="divider"></div>
-    <div class="card-content" style="padding-top:8px;padding-bottom:8px;">
+    <div class="card-content" style="padding-top:8px;padding-bottom:12px;">
       <h5 @click="showPoints = !showPoints" style="cursor: pointer;">Points <span class="right">{{result.totalPoints | formatPoints}} / 4</span></h5>
       <table v-if="showPoints" class="highlight">
         <thead>
@@ -17,13 +17,13 @@
         </thead>
 
         <tbody>
-          <tr v-for="(criterionR, index) in result.criterionResults" :key="index">
+          <tr v-for="(criterionR, index) in result.criterionResults" :key="index" :class="{'red lighten-4':criterionR.weightedPoints == 0}">
             <td>{{criterionR.criterion.name}}</td>
             <td>{{formatWeight(criterionR.criterion.weight, result.criterionResults)}}</td>
             <td>{{criterionR.criterion.answer}}</td>
             <td>{{criterionR.weightedPoints | formatPoints}}</td>
           </tr>
-          <tr class="table-summary">
+          <tr class=" table-summary">
             <td>Total</td>
             <td></td>
             <td></td>
@@ -33,9 +33,9 @@
       </table>
     </div>
     <div class="divider"></div>
-    <div class="card-content" style="padding-top:4px;padding-bottom:8px;">
+    <div class="card-content" style="padding-top:8px;padding-bottom:12px">
       <h5 @click="showAnswers = !showAnswers" style="cursor: pointer;">Answers</h5>
-      <div v-if="showAnswers">
+      <div v-if="showAnswers" style="margin-bottom:8px;">
         <p v-if="result.questionResults.length == 0">No questions answered</p>
         <div v-for="q in result.questionResults" :key="q.question" style="margin-bottom:8px">
           <p>{{q.question}}</p>
