@@ -1,14 +1,14 @@
 <template>
   <div class="row">
-    <div class="col s2" :class="{'unknown': unknown}">
-      <p>Strongly disagree</p>
+    <div class="col s3 m2" :class="{'unknown': unknown}">
+      <p>Strongly agree</p>
     </div>
-    <div class="col s6" :class="{'unknown': unknown}">
+    <div class="col s6 m6" :class="{'unknown': unknown}">
       <input type="range" id="test5" min="0" max="4" step="1" v-model="question.answer" :disabled="unknown" />
     </div>
-    <div class="col s2" :class="{'unknown': unknown}">
+    <div class="col s3 m2" :class="{'unknown': unknown}">
       <p class="right-align">
-        Strongly agree
+        Strongly disagree
       </p>
     </div>
     <div class="col s4 m2">
@@ -60,6 +60,7 @@ export default {
   }
 }
 input[type="range"] {
+  direction: rtl;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-bottom: 21px;
