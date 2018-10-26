@@ -38,7 +38,7 @@ export default {
     updateUnkown() {
       this.unknown = !this.unknown;
       if (this.unknown) {
-        this.question.answer = 0;
+        this.question.answer = this.question.reverse ? 4 : 0;
       }
     }
   }

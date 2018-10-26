@@ -1,9 +1,10 @@
 class Criterion {
-  constructor(id, category, question, answer) {
+  constructor(id, category, question, answer, reverse) {
     this.id = id;
     this.category = category;
     this.question = question;
     this.answer = parseInt(answer);
+    this.reverse = reverse;
   }
 }
 
@@ -35,7 +36,7 @@ const toQuestions = questions => {
       return new RadioQuestion(q.id, q.category, q.question, q.answers, q.answer);
     }
     if (q.type == "Criterion") {
-      return new Criterion(q.id, q.category, q.question, q.answer);
+      return new Criterion(q.id, q.category, q.question, q.answer, q.reverse);
     }
   });
 };
