@@ -60,9 +60,9 @@ public class Survey {
             RadioQuestion.yesNoUnkown(OUTPUT,
                     "Are there existing rules, which should be considered for the model?"),
             new Criterion("F1", OUTPUT, DATA_QUALITY,
-                    "Randomness in connection between input and output data" , 1, "The connection between input and output data is very random."),
+                    "Randomness in connection between input and output data" , 1, "The connection between input and output data is very random.", true),
             new Criterion("F1", OUTPUT, MODEL_INTERPRETABILITY,
-                    "Importance of model interpretability", 1, "It is important that the model can be interpreted."),
+                    "Importance of model interpretability", 1, "It is important that the model can be interpreted.", true),
             new Criterion("F1", OUTPUT, null, "Cost for error in prediction", 1, "Costs for errors in prediction are low."),
 
             new Criterion("F1", INPUT, DATA_QUANTITY,

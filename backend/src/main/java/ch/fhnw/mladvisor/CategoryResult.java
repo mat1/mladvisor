@@ -32,6 +32,6 @@ public class CategoryResult {
     }
 
     public int getMaximumPoints() {
-        return 4;
+        return Criterion.MAXIMUM_POINTS;
     }
 }

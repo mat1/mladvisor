@@ -20,7 +20,7 @@
           <tr v-for="(criterionR, index) in result.criterionResults" :key="index" :class="{'red lighten-4':criterionR.weightedPoints == 0}">
             <td>{{criterionR.criterion.name}}</td>
             <td>{{formatWeight(criterionR.criterion.weight, result.criterionResults)}}</td>
-            <td>{{criterionR.criterion.answer}}</td>
+            <td>{{criterionR.criterion.points}}</td>
             <td>{{criterionR.weightedPoints | formatPoints}}</td>
           </tr>
           <tr class=" table-summary">
