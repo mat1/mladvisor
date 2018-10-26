@@ -2,6 +2,15 @@
   <div>
     <loading-widget v-if="loading"></loading-widget>
     <div v-else>
+      <div class="row">
+        <div class="col s12">
+          <blockquote>
+            The statements with the slider are used to calculate a score in four areas (actual situation, target situation, input and output). 
+            The questions with the radio buttons and text fields have no influence on the score.
+            But these questions are important to answer before your start with a machine learning project.
+          </blockquote>
+        </div>
+      </div>
       <div class="row" v-for="question in questions" :key="question.id">
         <div class="row" v-if="firstQuestionFromCategory(question) && question.category != 'GENERAL'">
           <div class="col s12">
