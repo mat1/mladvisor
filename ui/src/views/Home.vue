@@ -24,7 +24,7 @@
       </div>
       <div class="row">
         <div class="col s12">
-          <p>The workshop and the flipchart template which is used in the workshop can be downloaded with the link below.</p>
+          <p>Below you find the workshop and flipchart template as PDF.</p>
         </div>
         <div class="col s12">
           <a class="waves-effect waves-light btn" href="/templates/Identify-Use-Cases-for-Machine-Learning-Workshop.pdf" target="_blank">Download Workshop</a>
