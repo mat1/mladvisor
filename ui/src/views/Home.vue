@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col s12">
           <h5>Identify Use Cases for Machine Learning Workshop</h5>
-          <p>The ml advisor process supports your business to get a basic understanding about machine learning and to identify suitable cases.</p>
+          <p>The ml advisor process supports your organization to get a basic understanding about machine learning and to identify suitable cases.</p>
         </div>
       </div>
       <div class="row">
