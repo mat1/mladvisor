@@ -53,3 +53,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+#app #materialbox-overlay {
+  background-color: white;
+}
+</style>
+
