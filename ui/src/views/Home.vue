@@ -7,13 +7,15 @@
           for machine learning and to compare different use cases with each other. Press start and answer some questions about your case.</p>
         <button class="waves-effect waves-light btn-large" @click="start">Start</button>
         <p>You are not at the point where you already identified potential use cases for machine learning?
-          You are not sure which potential machine learning for your company has? Then the identify use cases for machine learning workshop is something for you.</p>
+          You are not sure which potential machine learning has for your company? Then the identify use cases for machine learning workshop is something for you.</p>
       </div>
 
       <div class="row">
         <div class="col s12">
           <h5>Identify Use Cases for Machine Learning Workshop</h5>
-          <p>The ML Advisor Process supports your organization to get a basic understanding about machine learning and to identify suitable cases.</p>
+          <p>The ML Advisor Process supports your organization to get a basic understanding about machine learning and to identify suitable cases.
+            It starts with a workshop got get a basic understanding about ML and to create a shared vocabulary.
+            With this knowledge potential cases are identified and evaluated afterward with the ML Advisor.</p>
         </div>
       </div>
       <div class="row">
