@@ -72,7 +72,7 @@ public class Survey {
             new Criterion("F1", INPUT, DATA_QUANTITY,
                     "Cost for labeling data compared with benefit", 2.6, "Cost for labeling data compared with benefit is low."),
             new TextQuestion("F1", INPUT,
-                    "How was the data labeled?"),
+                    "How was the data labelled?"),
             new Criterion("F1", INPUT, DATA_QUALITY,
                     "Clean data", 2, "The dataset is clean."),
             new Criterion("F1", INPUT, DATA_QUALITY,
