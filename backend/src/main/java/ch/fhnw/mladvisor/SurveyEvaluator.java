@@ -34,8 +34,7 @@ public class SurveyEvaluator {
     }
 
     private static List<CriterionResult> toCriterionResult(List<Criterion> criterion) {
-        int size = criterion.size();
-        double totalWeight = criterion.stream().mapToInt(Criterion::getWeight).sum();
+        double totalWeight = criterion.stream().mapToDouble(Criterion::getWeight).sum();
 
         return criterion.stream().map(c -> {
             double result = (c.getWeight() / totalWeight) * c.getPoints();

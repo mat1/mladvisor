@@ -13,16 +13,16 @@ public class Criterion implements Question {
     private final Category category;
     private final SubCategory subCategory;
     private final String name;
-    private final int weight;
+    private final double weight;
     private final String question;
     private final boolean reverse;
     private int answer;
 
-    public Criterion(String reference, Category category, SubCategory subCategory, String name, int weight, String question) {
+    public Criterion(String reference, Category category, SubCategory subCategory, String name, double weight, String question) {
         this(UUID.randomUUID().toString(), reference, category, subCategory, name, weight, question, MAXIMUM_POINTS / 2, false);
     }
 
-    public Criterion(String reference, Category category, SubCategory subCategory, String name, int weight, String question, boolean reverse) {
+    public Criterion(String reference, Category category, SubCategory subCategory, String name, double weight, String question, boolean reverse) {
         this(UUID.randomUUID().toString(), reference, category, subCategory, name, weight, question, MAXIMUM_POINTS / 2, reverse);
     }
 
@@ -32,7 +32,7 @@ public class Criterion implements Question {
                      @JsonProperty("category") Category category,
                      @JsonProperty("subCategory") SubCategory subCategory,
                      @JsonProperty("name") String name,
-                     @JsonProperty("weight") int weight,
+                     @JsonProperty("weight") double weight,
                      @JsonProperty("question") String question,
                      @JsonProperty("answer") int answer,
                      @JsonProperty("reverse") boolean reverse) {
@@ -67,7 +67,7 @@ public class Criterion implements Question {
         return name;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 

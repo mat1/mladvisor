@@ -74,7 +74,8 @@ export default {
       return "green lighten-2";
     },
     formatWeight(weight, criterionResults) {
-      const result = weight / criterionResults.length;
+      const totalWeight = criterionResults.map(c => c.criterion.weight).reduce((a, b) => a + b, 0);
+      const result = weight / totalWeight;
       return Math.round(result * 100) + "%";
     }
   },
