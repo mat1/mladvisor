@@ -13,9 +13,9 @@
       <div class="row">
         <div class="col s12">
           <h5>Identify Use Cases for Machine Learning Workshop</h5>
-          <p>The ML Advisor Process supports your organization to get a basic understanding about machine learning and to identify suitable cases.
-            It starts with a workshop got get a basic understanding about ML and to create a shared vocabulary.
-            With this knowledge potential cases are identified and evaluated afterward with the ML Advisor.</p>
+          <p>The ML Advisor Process supports your organization to get a basic understanding of machine learning and to identify suitable cases.
+            It starts with a workshop got get a basic understanding of ML and to create a shared vocabulary.
+            With this knowledge, potential cases are identified and evaluated afterwards with the ML Advisor.</p>
         </div>
       </div>
       <div class="row">
