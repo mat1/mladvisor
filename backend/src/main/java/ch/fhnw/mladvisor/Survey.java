@@ -17,7 +17,7 @@ public class Survey {
 
     private List<Question> questions = List.of(
             new TextQuestion("F1", GENERAL,
-                    "Please describe the problem, the customer wants to solve in a few sentences."),
+                    "Please describe the use case in a few sentences."),
 
             new TextQuestion("F2", ACTUAL,
                     "How does the current process look like?"),
