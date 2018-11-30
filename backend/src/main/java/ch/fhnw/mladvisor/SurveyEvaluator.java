@@ -3,6 +3,7 @@ package ch.fhnw.mladvisor;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 
@@ -22,7 +23,7 @@ public class SurveyEvaluator {
             return new CategoryResult(category,
                     toCriterionResult(entry.getValue()),
                     toQuestionResult(survey, category));
-        }).collect(toList());
+        }).sorted(comparing(CategoryResult::getCategory)).collect(toList());
     }
 
     private static List<QuestionResult> toQuestionResult(Survey survey, Category category) {
