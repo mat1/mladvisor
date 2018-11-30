@@ -53,7 +53,7 @@ public class Survey {
             new Criterion("F1", TARGET, null,
                     "Clear project goal", 2.4, "There is a clear goal for the project."),
             new Criterion("F1", TARGET, null,
-                    "Clear success factors", 2.2, "There are clear success factors for the project."),
+                    "Clear success factors", 2.2, "There are clear measurable success factors for the project."),
             new Criterion("F1", TARGET, null,
                     "Return on investment", 2, "The return on investment is high."),
 
